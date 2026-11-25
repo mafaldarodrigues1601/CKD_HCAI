@@ -20,7 +20,7 @@ All numbers come from the UCI CKD dataset (400 patients, 24 variables) with a fi
 | Uncertainty zone (deferred to the physician) | predicted probability 0.25 to 0.75 |
 | Active learning, labels needed to reach sensitivity 0.95 | median 14 (uncertainty sampling) vs 23.5 (random sampling) |
 
-The paper (`paper/`) describes the methods, experiments and limitations in full. The dataset is small and mostly well separated, so the results should not be read as evidence of clinical performance.
+The paper describes the methods, experiments and limitations in full. The dataset is small and mostly well separated, so the results should not be read as evidence of clinical performance.
 
 ## Repository structure
 
