@@ -1,0 +1,4 @@
+﻿Model,Sensitivity (mean ± SD),AUROC,F1-score,Precision
+Logistic Regression (baseline),0.994 ± 0.013,1.000,0.997,1.000
+Random Forest,0.996 ± 0.009,0.999,0.992,0.988
+XGBoost,0.981 ± 0.022,0.998,0.983,0.986

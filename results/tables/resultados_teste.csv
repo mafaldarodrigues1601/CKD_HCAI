@@ -1,0 +1,2 @@
+﻿modelo,sensibilidade,precisao,f1,exatidao,auroc,n_teste
+Regressão Logística (baseline),0.98,1.0,0.9899,0.9875,1.0,80

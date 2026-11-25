@@ -1,0 +1,3 @@
+﻿metrica,aulc_incerteza_media,aulc_incerteza_dp,aulc_aleatorio_media,aulc_aleatorio_dp,wilcoxon_W,p_valor,seeds_incerteza_melhor,n_seeds
+sensibilidade,0.983117,0.012742,0.955589,0.023438,5.0,1.9e-05,19,20
+AUROC,0.999639,0.000368,0.999088,0.000875,39.0,0.024224,11,20

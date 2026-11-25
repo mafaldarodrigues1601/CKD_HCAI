@@ -1,0 +1,7 @@
+﻿metrica,modelo_A,modelo_B,media_A,media_B,dif_media_A_menos_B,folds_A_melhor,folds_B_melhor,folds_empate,p_wilcoxon_ingenuo,p_nadeau_bengio,p_nadeau_bengio_bonferroni
+sensibilidade,Regressão Logística (baseline),Random Forest,0.9945,0.996,-0.0015,7,8,35,0.498709,0.860125,1.0
+sensibilidade,Regressão Logística (baseline),XGBoost,0.9945,0.981,0.0135,24,5,21,0.000784,0.310634,0.931903
+sensibilidade,Random Forest,XGBoost,0.996,0.981,0.015,24,1,25,1.3e-05,0.17196,0.515879
+auroc,Regressão Logística (baseline),Random Forest,0.999896,0.999229,0.000667,15,1,34,0.000458,0.312978,0.938935
+auroc,Regressão Logística (baseline),XGBoost,0.999896,0.998146,0.00175,23,1,26,2.8e-05,0.291717,0.87515
+auroc,Random Forest,XGBoost,0.999229,0.998146,0.001083,18,4,28,0.000603,0.355844,1.0

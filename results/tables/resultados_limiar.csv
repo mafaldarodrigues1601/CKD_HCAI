@@ -1,0 +1,5 @@
+﻿sensibilidade_alvo,limiar,sens_treino_oof,espec_treino_oof
+0.95,0.8374,0.95,1.0
+0.98,0.6417,0.98,1.0
+0.99,0.5087,0.99,0.9992
+1.0,0.33,1.0,0.9742

@@ -1,0 +1,2 @@
+﻿modelo,top5_shap,marcadores_kdigo_no_top5,n_marcadores_no_top5,erro_aditividade
+Regressão Logística (baseline),"sg, hemo, pcv, dm, htn",sg,1,7.105427357601002e-15

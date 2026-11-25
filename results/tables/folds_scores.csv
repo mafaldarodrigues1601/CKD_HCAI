@@ -1,0 +1,151 @@
+﻿modelo,fold,repeticao,sensibilidade,auroc,f1,precisao
+Regressão Logística (baseline),0,0,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),1,0,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),2,0,0.975,0.998958,0.975,0.975
+Regressão Logística (baseline),3,0,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),4,0,0.975,1.0,0.987342,1.0
+Regressão Logística (baseline),5,1,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),6,1,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),7,1,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),8,1,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),9,1,0.975,1.0,0.987342,1.0
+Regressão Logística (baseline),10,2,0.975,1.0,0.987342,1.0
+Regressão Logística (baseline),11,2,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),12,2,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),13,2,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),14,2,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),15,3,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),16,3,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),17,3,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),18,3,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),19,3,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),20,4,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),21,4,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),22,4,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),23,4,0.95,0.998958,0.974359,1.0
+Regressão Logística (baseline),24,4,0.975,1.0,0.987342,1.0
+Regressão Logística (baseline),25,5,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),26,5,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),27,5,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),28,5,0.975,1.0,0.987342,1.0
+Regressão Logística (baseline),29,5,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),30,6,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),31,6,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),32,6,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),33,6,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),34,6,0.975,1.0,0.987342,1.0
+Regressão Logística (baseline),35,7,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),36,7,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),37,7,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),38,7,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),39,7,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),40,8,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),41,8,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),42,8,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),43,8,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),44,8,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),45,9,0.95,0.996875,0.974359,1.0
+Regressão Logística (baseline),46,9,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),47,9,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),48,9,1.0,1.0,1.0,1.0
+Regressão Logística (baseline),49,9,1.0,1.0,1.0,1.0
+Random Forest,0,0,1.0,1.0,1.0,1.0
+Random Forest,1,0,1.0,0.996875,0.987654,0.97561
+Random Forest,2,0,1.0,0.997917,0.97561,0.952381
+Random Forest,3,0,1.0,1.0,1.0,1.0
+Random Forest,4,0,1.0,1.0,1.0,1.0
+Random Forest,5,1,1.0,1.0,1.0,1.0
+Random Forest,6,1,1.0,0.997917,0.987654,0.97561
+Random Forest,7,1,1.0,1.0,1.0,1.0
+Random Forest,8,1,1.0,0.996875,0.987654,0.97561
+Random Forest,9,1,1.0,1.0,1.0,1.0
+Random Forest,10,2,1.0,1.0,1.0,1.0
+Random Forest,11,2,1.0,0.994792,0.987654,0.97561
+Random Forest,12,2,1.0,1.0,1.0,1.0
+Random Forest,13,2,0.975,0.998958,0.975,0.975
+Random Forest,14,2,1.0,1.0,1.0,1.0
+Random Forest,15,3,1.0,0.997917,0.97561,0.952381
+Random Forest,16,3,0.975,1.0,0.987342,1.0
+Random Forest,17,3,1.0,1.0,1.0,1.0
+Random Forest,18,3,1.0,1.0,1.0,1.0
+Random Forest,19,3,1.0,1.0,1.0,1.0
+Random Forest,20,4,1.0,1.0,1.0,1.0
+Random Forest,21,4,1.0,1.0,1.0,1.0
+Random Forest,22,4,0.975,0.997917,0.975,0.975
+Random Forest,23,4,1.0,1.0,1.0,1.0
+Random Forest,24,4,1.0,0.997917,0.987654,0.97561
+Random Forest,25,5,1.0,1.0,1.0,1.0
+Random Forest,26,5,1.0,1.0,0.987654,0.97561
+Random Forest,27,5,0.975,0.997917,0.975,0.975
+Random Forest,28,5,1.0,1.0,1.0,1.0
+Random Forest,29,5,1.0,1.0,1.0,1.0
+Random Forest,30,6,1.0,1.0,1.0,1.0
+Random Forest,31,6,1.0,1.0,1.0,1.0
+Random Forest,32,6,1.0,1.0,1.0,1.0
+Random Forest,33,6,1.0,0.995833,0.963855,0.930233
+Random Forest,34,6,0.975,1.0,0.987342,1.0
+Random Forest,35,7,1.0,1.0,0.97561,0.952381
+Random Forest,36,7,1.0,1.0,1.0,1.0
+Random Forest,37,7,1.0,0.997917,0.987654,0.97561
+Random Forest,38,7,1.0,1.0,1.0,1.0
+Random Forest,39,7,0.975,1.0,0.987342,1.0
+Random Forest,40,8,1.0,0.998958,0.987654,0.97561
+Random Forest,41,8,1.0,1.0,1.0,1.0
+Random Forest,42,8,1.0,0.998958,0.987654,0.97561
+Random Forest,43,8,0.975,1.0,0.987342,1.0
+Random Forest,44,8,1.0,1.0,1.0,1.0
+Random Forest,45,9,1.0,0.994792,0.97561,0.952381
+Random Forest,46,9,1.0,1.0,1.0,1.0
+Random Forest,47,9,0.975,1.0,0.987342,1.0
+Random Forest,48,9,1.0,1.0,0.987654,0.97561
+Random Forest,49,9,1.0,1.0,1.0,1.0
+XGBoost,0,0,0.95,1.0,0.974359,1.0
+XGBoost,1,0,1.0,0.996875,0.987654,0.97561
+XGBoost,2,0,0.975,0.994792,0.962963,0.95122
+XGBoost,3,0,0.975,0.997917,0.975,0.975
+XGBoost,4,0,1.0,1.0,1.0,1.0
+XGBoost,5,1,0.975,0.997917,0.987342,1.0
+XGBoost,6,1,1.0,1.0,0.987654,0.97561
+XGBoost,7,1,1.0,1.0,1.0,1.0
+XGBoost,8,1,1.0,0.996875,0.97561,0.952381
+XGBoost,9,1,0.975,1.0,0.987342,1.0
+XGBoost,10,2,1.0,1.0,1.0,1.0
+XGBoost,11,2,0.9,0.984375,0.935065,0.972973
+XGBoost,12,2,0.975,1.0,0.987342,1.0
+XGBoost,13,2,0.975,0.997917,0.975,0.975
+XGBoost,14,2,1.0,1.0,1.0,1.0
+XGBoost,15,3,1.0,0.99375,0.97561,0.952381
+XGBoost,16,3,0.95,0.997917,0.974359,1.0
+XGBoost,17,3,1.0,1.0,1.0,1.0
+XGBoost,18,3,0.975,1.0,0.987342,1.0
+XGBoost,19,3,1.0,1.0,1.0,1.0
+XGBoost,20,4,0.975,0.998958,0.987342,1.0
+XGBoost,21,4,1.0,1.0,1.0,1.0
+XGBoost,22,4,1.0,0.997917,0.987654,0.97561
+XGBoost,23,4,1.0,1.0,1.0,1.0
+XGBoost,24,4,0.975,0.99375,0.975,0.975
+XGBoost,25,5,0.975,1.0,0.987342,1.0
+XGBoost,26,5,1.0,0.997917,0.987654,0.97561
+XGBoost,27,5,0.975,0.998958,0.975,0.975
+XGBoost,28,5,1.0,1.0,0.987654,0.97561
+XGBoost,29,5,0.975,1.0,0.987342,1.0
+XGBoost,30,6,1.0,1.0,1.0,1.0
+XGBoost,31,6,0.975,1.0,0.987342,1.0
+XGBoost,32,6,0.975,1.0,0.987342,1.0
+XGBoost,33,6,1.0,0.989583,0.963855,0.930233
+XGBoost,34,6,0.925,0.997917,0.961039,1.0
+XGBoost,35,7,1.0,1.0,0.987654,0.97561
+XGBoost,36,7,0.95,0.998958,0.974359,1.0
+XGBoost,37,7,0.95,0.99375,0.95,0.95
+XGBoost,38,7,0.975,1.0,0.987342,1.0
+XGBoost,39,7,0.975,1.0,0.987342,1.0
+XGBoost,40,8,1.0,0.998958,0.987654,0.97561
+XGBoost,41,8,0.975,0.998958,0.975,0.975
+XGBoost,42,8,1.0,0.998958,0.987654,0.97561
+XGBoost,43,8,0.975,0.996875,0.987342,1.0
+XGBoost,44,8,0.975,1.0,0.987342,1.0
+XGBoost,45,9,0.975,0.9875,0.962963,0.95122
+XGBoost,46,9,0.975,1.0,0.987342,1.0
+XGBoost,47,9,0.95,1.0,0.974359,1.0
+XGBoost,48,9,1.0,1.0,0.987654,0.97561
+XGBoost,49,9,1.0,1.0,1.0,1.0

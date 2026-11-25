@@ -1,0 +1,4 @@
+﻿modelo,recall_media,recall_dp,auc,f1,precisao,selecionado
+Regressão Logística (baseline),0.9945,0.01254,0.999896,0.996955,0.9995,True
+Random Forest,0.996,0.009165,0.999229,0.992091,0.988417,False
+XGBoost,0.981,0.021541,0.998146,0.983424,0.986318,False

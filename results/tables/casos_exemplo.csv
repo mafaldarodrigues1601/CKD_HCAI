@@ -1,0 +1,4 @@
+﻿caso,doente,real,probabilidade,decisao_modelo,categoria,deferir_ao_medico,essenciais_em_falta,top5_shap,referenciacao,comportamento_esperado,ok
+claramente DRC,154,DRC,1.0,DRC,elevado,False,,"sg, hemo, sc, al, pcv",Considerar referenciação para nefrologia.,decisão DRC e categoria elevado,True
+caso limite,224,DRC,0.5423,sem DRC,incerto,True,hemo,"htn, pe, al, sg, dm",Considerar referenciação para nefrologia.,deferido ao médico (zona de incerteza),True
+saudável,371,sem DRC,0.0003,sem DRC,baixo,False,,"hemo, sg, pcv, htn, al",Sem indicação de referenciação. Manter rastreio periódico se tiver hipertensão ou diabetes.,decisão sem DRC e categoria baixo,True

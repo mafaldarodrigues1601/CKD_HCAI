@@ -1,0 +1,382 @@
+{
+  "X1": [
+    {
+      "data": "2026-11-23T15:11:12",
+      "dados": {
+        "age": 64,
+        "bp": 90,
+        "sg": 1.01,
+        "al": 3,
+        "bu": 60,
+        "sc": 2.3,
+        "hemo": 10.1,
+        "htn": 1,
+        "dm": 1
+      },
+      "probabilidade_drc": 1.0,
+      "categoria": "elevado"
+    },
+    {
+      "data": "2026-11-23T15:13:35",
+      "dados": {
+        "age": 64,
+        "bp": 90,
+        "sg": 1.01,
+        "al": 3,
+        "bu": 60,
+        "sc": 2.3,
+        "hemo": 10.1,
+        "htn": 1,
+        "dm": 1
+      },
+      "probabilidade_drc": 1.0,
+      "categoria": "elevado"
+    },
+    {
+      "data": "2026-11-23T15:16:14",
+      "dados": {
+        "age": 64,
+        "bp": 90,
+        "sg": 1.01,
+        "al": 3,
+        "sc": 2.3,
+        "bu": 60,
+        "htn": 1,
+        "dm": 1
+      },
+      "probabilidade_drc": 1.0,
+      "categoria": "elevado"
+    },
+    {
+      "data": "2026-11-23T15:16:16",
+      "dados": {
+        "age": 64,
+        "bp": 90,
+        "sg": 1.01,
+        "al": 3,
+        "sc": 2.3,
+        "bu": 60,
+        "htn": 1,
+        "dm": 1,
+        "hemo": 10.1
+      },
+      "probabilidade_drc": 1.0,
+      "categoria": "elevado"
+    },
+    {
+      "data": "2026-11-23T15:18:45",
+      "dados": {
+        "age": 64.0,
+        "bp": 90.0,
+        "sg": 1.01,
+        "al": 3.0,
+        "bu": 60.0,
+        "sc": 2.3,
+        "hemo": 10.1,
+        "htn": 1,
+        "dm": 1
+      },
+      "probabilidade_drc": 1.0,
+      "categoria": "elevado"
+    }
+  ],
+  "X2": [
+    {
+      "data": "2026-11-23T15:11:48",
+      "dados": {
+        "age": 50,
+        "hemo": 9
+      },
+      "probabilidade_drc": 0.873,
+      "categoria": "elevado"
+    }
+  ],
+  "teste-204": [
+    {
+      "data": "2026-11-23T16:56:48",
+      "dados": {
+        "age": 65.0,
+        "bp": 90.0,
+        "sg": 1.01,
+        "al": 4.0,
+        "su": 2.0,
+        "bgr": 172.0,
+        "bu": 82.0,
+        "sc": 13.5,
+        "sod": 145.0,
+        "pot": 6.3,
+        "hemo": 8.8,
+        "pcv": 31.0,
+        "rbc": 0,
+        "pc": 0,
+        "pcc": 0,
+        "ba": 0,
+        "htn": 1,
+        "dm": 1,
+        "cad": 0,
+        "appet": 0,
+        "pe": 1,
+        "ane": 1
+      },
+      "probabilidade_drc": 1.0,
+      "categoria": "elevado",
+      "provisorio": false
+    }
+  ],
+  "demo1": [
+    {
+      "data": "2026-11-23T17:09:01",
+      "dados": {
+        "age": 40.0,
+        "bp": 70.0,
+        "sg": 1.025,
+        "al": 0.0,
+        "bu": 25.0,
+        "sc": 0.9,
+        "hemo": 15.0,
+        "htn": 0,
+        "dm": 0
+      },
+      "probabilidade_drc": 0.024,
+      "categoria": "baixo",
+      "provisorio": false
+    }
+  ],
+  "demo2": [
+    {
+      "data": "2026-11-23T17:18:48",
+      "dados": {
+        "age": 60.0,
+        "bp": 90.0,
+        "sg": 1.01,
+        "al": 3.0,
+        "bu": 80.0,
+        "sc": 4.5,
+        "hemo": 9.0,
+        "htn": 1,
+        "dm": 1
+      },
+      "probabilidade_drc": 1.0,
+      "categoria": "elevado",
+      "provisorio": false
+    },
+    {
+      "data": "2026-11-23T17:20:40",
+      "dados": {
+        "age": 60.0,
+        "bp": 90.0,
+        "sg": 1.01,
+        "al": 3.0,
+        "bu": 80.0,
+        "sc": 4.5,
+        "hemo": 9.0,
+        "htn": 1,
+        "dm": 1,
+        "appet": 1,
+        "ane": 1
+      },
+      "probabilidade_drc": 1.0,
+      "categoria": "elevado",
+      "provisorio": false
+    }
+  ],
+  "demo3": [
+    {
+      "data": "2026-11-23T17:23:03",
+      "dados": {
+        "age": 55.0,
+        "bp": 80.0,
+        "sg": 1.015,
+        "al": 1.0,
+        "bu": 40.0,
+        "sc": 1.6,
+        "hemo": 12.0,
+        "htn": 1,
+        "dm": 0
+      },
+      "probabilidade_drc": 0.9906,
+      "categoria": "elevado",
+      "provisorio": false
+    }
+  ],
+  "demo4": [
+    {
+      "data": "2026-11-23T17:25:07",
+      "dados": {
+        "age": 55.0,
+        "bp": 80.0,
+        "sg": 1.02,
+        "al": 1.0,
+        "bu": 40.0,
+        "sc": 1.6,
+        "hemo": 12.0,
+        "htn": 0,
+        "dm": 0
+      },
+      "probabilidade_drc": 0.7087,
+      "categoria": "incerto",
+      "provisorio": false
+    }
+  ],
+  "demo5": [
+    {
+      "data": "2026-11-23T17:27:19",
+      "dados": {
+        "age": 55.0,
+        "bp": 80.0,
+        "sg": 1.02,
+        "al": 1.0,
+        "su": 0.0,
+        "bgr": 120.0,
+        "bu": 40.0,
+        "sc": 1.6,
+        "hemo": 12.0,
+        "pcv": 40.0,
+        "htn": 0,
+        "dm": 0,
+        "appet": 0
+      },
+      "probabilidade_drc": 0.7077,
+      "categoria": "incerto",
+      "provisorio": false
+    }
+  ],
+  "demo6": [
+    {
+      "data": "2026-11-23T17:29:42",
+      "dados": {
+        "age": 40.0,
+        "bp": 70.0,
+        "sg": 1.025,
+        "al": 0.0,
+        "bu": 25.0,
+        "hemo": 15.0,
+        "htn": 0,
+        "dm": 0
+      },
+      "probabilidade_drc": 0.0252,
+      "categoria": "baixo",
+      "provisorio": true
+    }
+  ],
+  "demo7": [
+    {
+      "data": "2026-11-23T17:31:23",
+      "dados": {
+        "age": 60.0,
+        "bp": 90.0,
+        "sg": 1.01,
+        "al": 3.0,
+        "bu": 80.0,
+        "sc": 48.1,
+        "hemo": 9.0,
+        "htn": 1,
+        "dm": 1
+      },
+      "probabilidade_drc": 1.0,
+      "categoria": "elevado",
+      "provisorio": false
+    }
+  ],
+  "agente1": [
+    {
+      "data": "2026-11-23T17:34:16",
+      "dados": {
+        "age": 60.0,
+        "bp": 90.0,
+        "sg": 1.01,
+        "al": 3.0,
+        "bu": 80.0,
+        "sc": 4.5,
+        "hemo": 9.0,
+        "htn": 1,
+        "dm": 1,
+        "appet": 1,
+        "ane": 1
+      },
+      "probabilidade_drc": 1.0,
+      "categoria": "elevado",
+      "provisorio": false
+    }
+  ],
+  "demo8": [
+    {
+      "data": "2026-11-23T17:37:11",
+      "dados": {
+        "age": 60.0,
+        "bp": 90.0,
+        "sg": 1.01,
+        "al": 3.0,
+        "bu": 80.0,
+        "sc": 4.5,
+        "hemo": 9.0,
+        "htn": 1,
+        "dm": 1,
+        "appet": 1,
+        "ane": 1
+      },
+      "probabilidade_drc": 1.0,
+      "categoria": "elevado",
+      "provisorio": false
+    },
+    {
+      "data": "2026-11-23T17:37:28",
+      "dados": {
+        "age": 60,
+        "bp": 90,
+        "sg": 1.01,
+        "al": 3,
+        "bu": 80,
+        "sc": 4.5,
+        "hemo": 9,
+        "htn": 1,
+        "dm": 1,
+        "appet": 1,
+        "ane": 1
+      },
+      "probabilidade_drc": 1.0,
+      "categoria": "elevado",
+      "provisorio": false
+    }
+  ],
+  "demo9": [
+    {
+      "data": "2026-11-23T17:49:54",
+      "dados": {
+        "age": 60.0,
+        "bp": 90.0,
+        "sg": 1.01,
+        "al": 3.0,
+        "bu": 80.0,
+        "sc": 4.5,
+        "hemo": 9.0,
+        "htn": 1,
+        "dm": 1,
+        "appet": 1,
+        "ane": 1
+      },
+      "probabilidade_drc": 1.0,
+      "categoria": "elevado",
+      "provisorio": false
+    },
+    {
+      "data": "2026-11-23T17:50:11",
+      "dados": {
+        "age": 60,
+        "bp": 90,
+        "sg": 1.01,
+        "al": 3,
+        "bu": 80,
+        "sc": 4.5,
+        "hemo": 9,
+        "htn": 1,
+        "dm": 1,
+        "appet": 1,
+        "ane": 1
+      },
+      "probabilidade_drc": 1.0,
+      "categoria": "elevado",
+      "provisorio": false
+    }
+  ]
+}

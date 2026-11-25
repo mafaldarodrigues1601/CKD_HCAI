@@ -1,0 +1,182 @@
+
+======================================================================
+[1/8] Comparação dos modelos  (comparar_modelos.py)
+======================================================================
+Treino: 320 | Teste: 80 | % CKD no treino: 62.5%
+
+Validação cruzada (5 folds x 10 repetições, só treino):
+                                recall_media  recall_dp    auc     f1  precisao
+Regressão Logística (baseline)         0.994      0.013  1.000  0.997     1.000
+Random Forest                          0.996      0.009  0.999  0.992     0.988
+XGBoost                                0.981      0.022  0.998  0.983     0.986
+
+Empatados com o melhor (diferença < 1 DP): Regressão Logística (baseline), Random Forest
+Modelo selecionado (mais simples entre os empatados): Regressão Logística (baseline)
+
+Teste (modelo selecionado):
+  Sensibilidade: 0.980
+  Precisão:      1.000
+  F1:            0.990
+  Exatidão:      0.988
+  AUROC:         1.000
+Modelo guardado em results/models/modelo_ckd.joblib
+-> concluído em 8s
+
+======================================================================
+[2/8] Calibração e limiar  (limiar_calibracao.py)
+======================================================================
+Modelo: Regressão Logística (baseline)
+
+Brier fora-da-amostra (treino, menor = melhor):
+  original              : 0.0072
+  calibrado (sigmoide)  : 0.0186
+-> Probabilidade usada: original
+
+Limiar para sensibilidade >= 0.98: 0.642
+  treino fora-da-amostra: sens 0.980 | espec 1.000   (limiar 0.5: sens 0.993 | espec 0.998)
+
+Trade-off sensibilidade/especificidade (treino, fora-da-amostra):
+ sensibilidade_alvo  limiar  sens_treino_oof  espec_treino_oof
+               0.95  0.8374             0.95            1.0000
+               0.98  0.6417             0.98            1.0000
+               0.99  0.5087             0.99            0.9992
+               1.00  0.3300             1.00            0.9742
+
+Teste (limiar 0.642): sensibilidade 0.960 | especificidade 1.000 | FN 2 | FP 0
+Teste (limiar 0.5):   sensibilidade 0.980 | especificidade 1.000
+Brier no teste: 0.0103 | AUROC: 1.000
+
+Guardado: results/models/modelo_ckd_final.joblib (modelo + limiar)
+Gráficos guardados em results/figures/limiar_calibracao.png
+-> concluído em 7s
+
+======================================================================
+[3/8] Gráficos finais  (graficos_finais.py)
+======================================================================
+A) All variables                                 sens 0.996 ± 0.009 | espec 0.980 | AUC 0.999
+B) Without renal markers (sc, bu, al, sg)        sens 0.982 ± 0.022 | espec 0.974 | AUC 0.993
+C) Risk factors only                             sens 0.882 ± 0.049 | espec 0.907 | AUC 0.951
+D) Risk factors + hemoglobin                     sens 0.974 ± 0.025 | espec 0.959 | AUC 0.993
+
+Guardado em results/figures e results/tables.
+-> concluído em 11s
+
+======================================================================
+[4/8] Comparação sobre as folds  (comparacao_folds.py)
+======================================================================
+3 modelos x 50 folds (treino=256, teste por fold=64)
+
+      metrica                       modelo_A      modelo_B  dif_media_A_menos_B  folds_A_melhor  folds_B_melhor  folds_empate  p_wilcoxon_ingenuo  p_nadeau_bengio  p_nadeau_bengio_bonferroni
+sensibilidade Regressão Logística (baseline) Random Forest              -0.0015               7               8            35              0.4987           0.8601                      1.0000
+sensibilidade Regressão Logística (baseline)       XGBoost               0.0135              24               5            21              0.0008           0.3106                      0.9319
+sensibilidade                  Random Forest       XGBoost               0.0150              24               1            25              0.0000           0.1720                      0.5159
+        auroc Regressão Logística (baseline) Random Forest               0.0007              15               1            34              0.0005           0.3130                      0.9389
+        auroc Regressão Logística (baseline)       XGBoost               0.0018              23               1            26              0.0000           0.2917                      0.8751
+        auroc                  Random Forest       XGBoost               0.0011              18               4            28              0.0006           0.3558                      1.0000
+
+RESSALVA: as folds não são independentes; o p de Nadeau-Bengio corrige isso, o Wilcoxon é otimista.
+
+Guardado em /Users/mafaldarodrigues/Downloads/ckd-hcai-main/Projeto_CKD/results/tables e /Users/mafaldarodrigues/Downloads/ckd-hcai-main/Projeto_CKD/results/figures.
+-> concluído em 6s
+
+======================================================================
+[5/8] Explicações SHAP  (explicar_shap.py)
+======================================================================
+Background dataset has 320 samples but max_samples=100. Subsampling to 100 samples for SHAP value computation. To use all samples, set max_samples=320 when initializing the masker.
+Modelo: Regressão Logística (baseline) | limiar 0.642 | escala SHAP: log-odds
+Fidelidade: erro máximo |base + soma(SHAP) - saída do modelo| = 7.11e-15
+
+Doente 204 (drc): O modelo estima uma probabilidade de DRC de >99%. O que mais aumentou o risco: densidade urinária 1.01 (abaixo do normal); albumina na urina (0-5) 4 (acima do normal); hemoglobina 8.8 g/dL (abaixo do normal); creatinina 13.5 mg/dL (acima do normal); diabetes: sim; hipertensão: sim; hematócrito 31 % (abaixo do normal); açúcar na urina (0-5) 2 (acima do normal); edema dos membros inferiores: sim; pressão arterial diastólica 90 mmHg (acima do normal). (Fatores por ordem de peso na decisão do modelo.) Em falta e substituídos por valores típicos do treino: leucócitos, eritrócitos.
+
+Doente 371 (sem_drc): O modelo estima uma probabilidade de DRC de <1%. O que mais o diminuiu: hemoglobina 17.6 g/dL (acima do normal); densidade urinária 1.025 (normal); hematócrito 51 % (acima do normal); hipertensão: não; albumina na urina (0-5) 0 (normal); diabetes: não; pressão arterial diastólica 60 mmHg (normal); glicemia ocasional 79 mg/dL (normal); falta de apetite: não; creatinina 0.5 mg/dL (abaixo do normal). (Fatores por ordem de peso na decisão do modelo.)
+
+Doente 224 (incerto): O modelo estima uma probabilidade de DRC de 54%. O que mais aumentou o risco: edema dos membros inferiores: sim. O que mais o diminuiu: hipertensão: não; albumina na urina (0-5) 0 (normal); densidade urinária 1.02 (normal); diabetes: não; pressão arterial diastólica 60 mmHg (normal); falta de apetite: não; hematócrito 40 % (normal) [em falta: valor típico usado]; ureia 28 mg/dL (normal); açúcar na urina (0-5) 0 (normal). (Fatores por ordem de peso na decisão do modelo.) Em falta e substituídos por valores típicos do treino: hemoglobina, hematócrito, leucócitos, eritrócitos, eritrócitos na urina anormais.
+
+Top 5 SHAP: ['sg', 'hemo', 'pcv', 'dm', 'htn'] -> 1 de 5 são marcadores KDIGO
+Figuras em results/figures/ e tabelas em results/tables/
+-> concluído em 3s
+
+======================================================================
+[6/8] Casos de exemplo  (testar_casos.py)
+======================================================================
+Background dataset has 320 samples but max_samples=100. Subsampling to 100 samples for SHAP value computation. To use all samples, set max_samples=320 when initializing the masker.
+Modelo: Regressão Logística (baseline) | limiar 0.642 | probabilidade: original
+
+=== CLARAMENTE DRC (doente 154, real: DRC) ===
+Probabilidade 100.0% | decisão DRC | categoria elevado | deferir ao médico: False
+Esperado: decisão DRC e categoria elevado -> OK
+Explicação: O modelo estima uma probabilidade de DRC de >99%. O que mais aumentou o risco: densidade urinária 1.005 (abaixo do normal); hemoglobina 8.4 g/dL (abaixo do normal); creatinina 16.4 mg/dL (acima do normal); albumina na urina (0-5) 4 (acima do normal); hematócrito 26 % (abaixo do normal). (Fatores por ordem de peso na decisão do modelo.) Em falta e substituídos por valores típicos do treino: leucócitos.
+Referenciação: Considerar referenciação para nefrologia.
+
+=== CASO LIMITE (doente 224, real: DRC) ===
+Probabilidade 54.2% | decisão sem DRC | categoria incerto | deferir ao médico: True
+Esperado: deferido ao médico (zona de incerteza) -> OK
+Explicação: O modelo estima uma probabilidade de DRC de 54%. O que mais aumentou o risco: edema dos membros inferiores: sim. O que mais o diminuiu: hipertensão: não; albumina na urina (0-5) 0 (normal); densidade urinária 1.02 (normal); diabetes: não. (Fatores por ordem de peso na decisão do modelo.) Em falta e substituídos por valores típicos do treino: hemoglobina, hematócrito, leucócitos, eritrócitos, eritrócitos na urina anormais.
+Referenciação: Considerar referenciação para nefrologia.
+
+=== SAUDÁVEL (doente 371, real: sem DRC) ===
+Probabilidade 0.0% | decisão sem DRC | categoria baixo | deferir ao médico: False
+Esperado: decisão sem DRC e categoria baixo -> OK
+Explicação: O modelo estima uma probabilidade de DRC de <1%. O que mais o diminuiu: hemoglobina 17.6 g/dL (acima do normal); densidade urinária 1.025 (normal); hematócrito 51 % (acima do normal); hipertensão: não; albumina na urina (0-5) 0 (normal). (Fatores por ordem de peso na decisão do modelo.)
+Referenciação: Sem indicação de referenciação. Manter rastreio periódico se tiver hipertensão ou diabetes.
+
+3 de 3 casos com o comportamento esperado.
+Guardado: results/tables/casos_exemplo.csv e results/casos_exemplo.md
+-> concluído em 1s
+
+======================================================================
+[7/8] Active learning  (active_learning_ckd.py)
+======================================================================
+treino 320 (200 CKD) | teste 80 (50 CKD) | split fixo (42)
+referência (320 labels): sens 0.980, AUROC 1.000
+
+--- AULC normalizada (média ± dp) e Wilcoxon pareado ---
+sensibilidade: incerteza 0.980 ± 0.012 | aleatório 0.948 ± 0.018 | Wilcoxon W=2.0, p=5.722e-06 | seeds com AULC(inc) > AULC(aleat): 19/20
+AUROC: incerteza 0.999 ± 0.001 | aleatório 0.999 ± 0.001 | Wilcoxon W=70.0, p=0.2024 | seeds com AULC(inc) > AULC(aleat): 11/20
+
+--- Labels para sensibilidade >= 0.95 ---
+uncertainty: mediana 14.0 (IQR 13.0-16.0), 0 seeds não atingiram
+random: mediana 23.5 (IQR 19.5-35.75), 0 seeds não atingiram
+
+--- Valores em marcos (média ± dp) ---
+ 10 labels | sens inc 0.870±0.043 aleat 0.870±0.043 | AUROC inc 0.992±0.012 aleat 0.992±0.012
+ 20 labels | sens inc 0.973±0.021 aleat 0.919±0.036 | AUROC inc 1.000±0.001 aleat 0.998±0.004
+ 30 labels | sens inc 0.971±0.018 aleat 0.934±0.035 | AUROC inc 1.000±0.000 aleat 0.998±0.004
+ 50 labels | sens inc 0.985±0.015 aleat 0.956±0.025 | AUROC inc 1.000±0.000 aleat 1.000±0.001
+100 labels | sens inc 0.987±0.013 aleat 0.967±0.020 | AUROC inc 1.000±0.000 aleat 1.000±0.001
+
+--- Fração de CKD entre os labels pedidos (após os iniciais) ---
+uncertainty: 0.367 ± 0.038
+random: 0.629 ± 0.037
+
+Guardado em /Users/mafaldarodrigues/Downloads/ckd-hcai-main/Projeto_CKD/results/figures e /Users/mafaldarodrigues/Downloads/ckd-hcai-main/Projeto_CKD/results/tables.
+-> concluído em 35s
+
+======================================================================
+[8/8] Active learning (split variável)  (active_learning_ckd.py --vary-split)
+======================================================================
+treino 320 (200 CKD) | teste 80 (50 CKD) | split varia com a seed
+
+--- AULC normalizada (média ± dp) e Wilcoxon pareado ---
+sensibilidade: incerteza 0.983 ± 0.013 | aleatório 0.956 ± 0.023 | Wilcoxon W=5.0, p=1.907e-05 | seeds com AULC(inc) > AULC(aleat): 19/20
+AUROC: incerteza 1.000 ± 0.000 | aleatório 0.999 ± 0.001 | Wilcoxon W=39.0, p=0.02422 | seeds com AULC(inc) > AULC(aleat): 11/20
+
+--- Labels para sensibilidade >= 0.95 ---
+uncertainty: mediana 13.0 (IQR 12.0-14.0), 0 seeds não atingiram
+random: mediana 24.0 (IQR 15.0-27.75), 0 seeds não atingiram
+
+--- Valores em marcos (média ± dp) ---
+ 10 labels | sens inc 0.803±0.090 aleat 0.803±0.090 | AUROC inc 0.989±0.024 aleat 0.989±0.024
+ 20 labels | sens inc 0.982±0.018 aleat 0.899±0.067 | AUROC inc 1.000±0.001 aleat 0.997±0.005
+ 30 labels | sens inc 0.996±0.008 aleat 0.951±0.041 | AUROC inc 1.000±0.000 aleat 0.999±0.001
+ 50 labels | sens inc 0.988±0.017 aleat 0.966±0.033 | AUROC inc 1.000±0.000 aleat 1.000±0.001
+100 labels | sens inc 0.986±0.014 aleat 0.979±0.020 | AUROC inc 1.000±0.000 aleat 1.000±0.001
+
+--- Fração de CKD entre os labels pedidos (após os iniciais) ---
+uncertainty: 0.378 ± 0.032
+random: 0.629 ± 0.031
+
+Guardado em /Users/mafaldarodrigues/Downloads/ckd-hcai-main/Projeto_CKD/results/figures e /Users/mafaldarodrigues/Downloads/ckd-hcai-main/Projeto_CKD/results/tables.
+-> concluído em 35s
+
+Tudo concluído em 107s. Resultados em results/tables, results/figures e results/models.
