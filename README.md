@@ -1,4 +1,4 @@
-# HCAI_CKD: An Agentic Decision-Support System for Early Chronic Kidney Disease Detection and Nephrology Referral
+# CKD_HCAI: An Agentic Decision-Support System for Early Chronic Kidney Disease Detection and Nephrology Referral
 
 Code, results and paper for the Human-Centered AI (HCAI) course project.
 
