@@ -51,7 +51,7 @@ Code comments and console output are in Portuguese, the figures and the paper ar
 
 ## Installation
 
-Requires Python 3.11 or newer (tested with Python 3.14). From the project root (the folder containing `src/`, `data/` and `results/`):
+Requires Python 3.11 or newer (tested with Python 3.14.7). From the project root (the folder containing `src/`, `data/` and `results/`):
 
 ```bash
 python -m venv .venv
