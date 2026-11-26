@@ -1,7 +1,5 @@
 # CKD_HCAI: An Agentic Decision-Support System for Early Chronic Kidney Disease Detection and Nephrology Referral
 
-Code, results and paper for the Human-Centered AI (HCAI) course project.
-
 The system supports a general practitioner in screening for chronic kidney disease (CKD) from routine clinical data. It combines a calibrated classifier, SHAP explanations, KDIGO-inspired referral criteria and a tool-using language-model agent. Cases the model is unsure about are deferred to the physician. An active learning study shows how few labels are needed to train the model.
 
 **Authors:** Mafalda Martins Rodrigues, Carolina Picado, Martim Robalo.
