@@ -118,6 +118,5 @@ The model can be changed with the `CLAUDE_MODEL` environment variable (default `
 
 ## Data and references
 
-- Dataset: Rubini, L., Soundarapandian, P. and Eswaran, P., *Chronic Kidney Disease*, UCI Machine Learning Repository (2015).
-- Clinical guideline: KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of CKD.
-- Full references are in `paper/refs.bib`.
+- Dataset: Rubini, L., Soundarapandian, P. and Eswaran, P., *Chronic Kidney Disease*, UCI Machine Learning Repository (2015). doi:10.24432/C5G020. https://archive.ics.uci.edu/dataset/336/chronic+kidney+disease
+- Clinical guideline: KDIGO CKD Work Group, *KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease*, Kidney International 105(4S):S117–S314 (2024). doi:10.1016/j.kint.2023.10.018
