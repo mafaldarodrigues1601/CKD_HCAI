@@ -1,8 +1,8 @@
 # CKD_HCAI: An Agentic Decision-Support System for Early Chronic Kidney Disease Detection and Nephrology Referral
 
-The system supports a general practitioner in screening for chronic kidney disease (CKD) from routine clinical data. It combines a calibrated classifier, SHAP explanations, KDIGO-inspired referral criteria and a tool-using language-model agent. Cases the model is unsure about are deferred to the physician. An active learning study shows how few labels are needed to train the model.
+The system supports a general practitioner in screening for chronic kidney disease (CKD) from routine clinical data. It combines a logistic-regression classifier (probabilities used uncalibrated), SHAP explanations, KDIGO-inspired referral criteria and a tool-using language-model agent. Cases the model is unsure about are deferred to the physician. An active learning study shows how few labels are needed to train the model.
 
-**Authors:** Mafalda Martins Rodrigues, Carolina Picado, Martim Robalo.
+**Authors:** Carolina Picado, Mafalda Rodrigues, Martim Robalo.
 
 > **Disclaimer.** This is an academic prototype for decision support. It is not a medical device and does not replace clinical judgement. Diagnosis and referral are always the physician's decision.
 
@@ -103,7 +103,7 @@ python src/testar_casos.py --agente        # the 3 example cases through the age
 python -m streamlit run src/app.py         # or in the app, tab "Conversar com o agente"
 ```
 
-The model can be changed with the `CLAUDE_MODEL` environment variable (default `claude-sonnet-5-5`). Agent answers can vary between runs, so the qualitative tests in the paper are not exactly repeatable.
+The model can be changed with the `CLAUDE_MODEL` environment variable (default `claude-sonnet-5-5`). The agent tests reported in the paper used the free model `nvidia/nemotron-3.5-lightning` through OpenRouter (`CLAUDE_MODEL=nvidia/nemotron-3.5-lightning`). Agent answers can vary between runs, so the qualitative tests in the paper are not exactly repeatable.
 
 ## Design decisions
 
@@ -111,12 +111,12 @@ The model can be changed with the `CLAUDE_MODEL` environment variable (default `
 - **Model selection.** Highest mean sensitivity in 5×10 repeated CV (training set only). If the difference to the best model is below one standard deviation, the models tie and the simplest one is chosen.
 - **Threshold.** Chosen on out-of-fold predictions to reach a target sensitivity (`ALVO_SENS` in `src/limiar_calibracao.py`).
 - **Uncertainty and deferral.** Probabilities between 0.25 and 0.75 are "uncertain" and the case is deferred to the physician (`ZONA_INCERTA` in `src/ferramentas.py`).
-- **Explainability.** SHAP on the final model: `LinearExplainer` for logistic regression (log-odds), `TreeExplainer` for Random Forest and XGBoost. The script checks that base value plus the sum of SHAP values reproduces the model output, and counts how many of the top 5 variables are KDIGO markers (`sc`, `bu`, `al`, `sg`).
-- **Referral criteria.** Simplified, KDIGO 2024-inspired. The dataset has no sex, so eGFR cannot be computed.
+- **Explainability.** SHAP on the final model: `LinearExplainer` for logistic regression (log-odds), `TreeExplainer` for Random Forest and XGBoost. The script checks that base value plus the sum of SHAP values reproduces the model output, and counts how many of the top 5 variables are among the four classical renal markers (`sc`, `bu`, `al`, `sg`).
+- **Referral criteria.** Simplified, KDIGO 2024-inspired proxies based on the circumstances for referral in Figure 48 of the guideline, not a faithful implementation and not clinically validated. The dataset has no sex, so eGFR cannot be computed.
 - **Agent safety.** If essential values are missing, the agent asks for them. Values outside the plausible ranges (`LIMITES` in `Prep_Data.py`) are refused and sent back to the physician for confirmation.
 - **Example cases** (`testar_casos.py`), chosen on the test set: clear CKD is the highest-probability CKD patient, borderline is the patient closest to the threshold, healthy is the lowest-probability non-CKD patient.
 
 ## Data and references
 
 - Dataset: Rubini, L., Soundarapandian, P. and Eswaran, P., *Chronic Kidney Disease*, UCI Machine Learning Repository (2015). doi:10.24432/C5G020. https://archive.ics.uci.edu/dataset/336/chronic+kidney+disease
-- Clinical guideline: KDIGO CKD Work Group, *KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease*, Kidney International 105(4S):S117–S314 (2024). doi:10.1016/j.kint.2023.10.018
+- Clinical guideline: KDIGO CKD Work Group, *KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease*, Kidney International 105(4S):S117–S314 (2024). doi:10.1016/j.kint.2023.10.018.
